@@ -1,1 +1,11 @@
-<p>flight-delete works!</p>
+<h2 mat-dialog-title>Delete Flight</h2>
+<mat-dialog-content>
+    <mat-label name="label"></mat-label>
+   <h1>¿Delete flight ?</h1>
+    
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="deleteFlight()" color="primary">Eliminar</button>
+    <button mat-raised-button  mat-dialog-close color="warn">Cancelar</button>
+</mat-dialog-actions>

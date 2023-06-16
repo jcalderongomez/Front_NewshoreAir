@@ -14,7 +14,7 @@ const routes: Routes= [
       { path: 'create', component: FlightCreateComponent },
       { path: 'update/:id', component: FlightUpdateComponent },
       { path: 'delete/:id', component: FlightDeleteComponent },
-      { path: '**', redirectTo: 'listar' },
+      { path: '**', redirectTo: 'list' },
     ]
   }
 ]

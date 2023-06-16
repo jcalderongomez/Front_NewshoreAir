@@ -21,12 +21,11 @@ export class FlightService {
     return this.http.get<IFlight>(`${this.apiUrl}`)
   }
     
-  add(ministerio: Flight){
-    return this.http.post(this.apiUrl,ministerio);
+  add(flight: Flight){
+    return this.http.post(this.apiUrl,flight);
   }
 
   update(id:number, flight: Flight){
-    alert(JSON.stringify(flight));
     return this.http.put(this.apiUrl+"/"+id, flight);
   }
 

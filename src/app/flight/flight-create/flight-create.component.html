@@ -1,15 +1,45 @@
 
 <mat-card>
-    <h1  class="crear-field">Create New Fligh</h1>
-    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">      
-      <mat-form-field class="crear-field">
-        <input matInput placeholder="Nombre de la empresa" formControlName="Nombre">  
-      </mat-form-field>
-      <mat-form-field class="crear-field">
-        <input matInput placeholder="Nit  de la empresa" formControlName="Nit">
-      </mat-form-field>
-      
-      <button mat-raised-button [disabled]="!flightForm.valid" color="primary">Crer Nuevo</button>
-      <button mat-raised-button [routerLink]="['../listar']" color="warn">Cancelar</button>
-    </form>
-  </mat-card>
+  <h1  class="crear-empresa-field">Create New Flight</h1>
+  <form [formGroup]="formFlights" (ngSubmit)="onSubmit()">      
+    <mat-form-field class="crear-field">
+      <mat-label>Departure</mat-label>
+      <mat-select [(value)]="selectedDeparture " formControlName="AirportOriginId">
+          <mat-option *ngFor="let opt of optionsAirports" [value]="opt.id">
+            {{opt.name}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="crear-field">
+      <mat-label>Arrival</mat-label>
+      <mat-select [(value)]="selectedArrival " formControlName="AirportDestineId">
+          <mat-option *ngFor="let opt of optionsAirports" [value]="opt.id">
+            {{opt.name}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="crear-field">
+      <input matInput placeholder="Departure Time" formControlName="DepartureTime">  
+    </mat-form-field>
+
+    <mat-form-field class="crear-field">
+      <input matInput placeholder="Arrival Time" formControlName="ArrivalTime">  
+    </mat-form-field>
+
+    <mat-form-field class="crear-field">
+      <mat-label>Route</mat-label>
+      <mat-select [(value)]="selectedRoute" formControlName="RouteFlightId">
+          <mat-option *ngFor="let opt of optionsRoutes" [value]="opt.id">
+            {{opt.routeName}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+   
+
+    <button mat-raised-button [disabled]="!formFlights.valid" color="primary">Create New</button>
+    <button mat-raised-button [routerLink]="['../list']" color="warn">Cancel</button>
+  </form>
+</mat-card>

@@ -18,7 +18,7 @@ export class AirportService {
 
   getAirports():Observable<IAirport>
   {
-    console.log("pasa");
+    
     console.log(this.apiUrl);
     return this.http.get<IAirport>(`${this.apiUrl}`)
   }
