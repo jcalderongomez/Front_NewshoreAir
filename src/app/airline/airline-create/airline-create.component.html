@@ -1,0 +1,15 @@
+
+<mat-card>
+    <h1  class="crear-field">Create New Airline</h1>
+    <form [formGroup]="airlineForm" (ngSubmit)="onSubmit()">      
+      <mat-form-field class="crear-field">
+        <input matInput placeholder="Nombre de la empresa" formControlName="Nombre">  
+      </mat-form-field>
+      <mat-form-field class="crear-field">
+        <input matInput placeholder="Nit  de la empresa" formControlName="Nit">
+      </mat-form-field>
+      
+      <button mat-raised-button [disabled]="!airlineForm.valid" color="primary">Crer Nuevo</button>
+      <button mat-raised-button [routerLink]="['../listar']" color="warn">Cancelar</button>
+    </form>
+  </mat-card>
